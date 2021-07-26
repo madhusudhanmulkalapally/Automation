@@ -15,7 +15,9 @@ public class LoginTest extends AbstractTest {
     @Test(enabled = true, description="testdescriptipn")
     public void loginTest() {
         login = new LoginPageActions(Driver.getDriver());
-        login.login("mad", "sdf");
+        System.out.print("test passed");
+        //login.login("mad", "sdf");
+        login.clickOnGmail();
 
     }
 

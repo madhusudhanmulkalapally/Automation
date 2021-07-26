@@ -14,4 +14,10 @@ public class LoginPageActions extends LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
         userNameField.sendKeys("fsd");
     }
+
+    public void clickOnGmail() {
+        smallExplitwait(gmailText);
+        gmailText.click();
+        System.out.println("clicked on the gmail");
+    }
 }

@@ -13,4 +13,7 @@ public class LoginPage extends Driver {
 
     @FindBy(xpath = "")
     protected WebElement userNameField;
+
+    @FindBy(xpath = "//a[text()='Gmail']")
+    protected WebElement gmailText;
 }
