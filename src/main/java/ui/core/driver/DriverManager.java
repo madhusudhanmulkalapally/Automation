@@ -37,7 +37,7 @@ public class DriverManager {
                 cap.setCapability("name", methodName);
                 driver = new RemoteWebDriver(new URL("http://"+gridId+":80/wd/hub"), cap);
             }
-            if(browserName.toLowerCase().contains("sauce")) {
+            if(System.getProperty("browser").equalsIgnoreCase("saucechrome")) {
                 DesiredCapabilities caps = DesiredCapabilities.chrome();
                 caps.setCapability("platform", "Windows 10");
                 caps.setCapability("version", "latest");

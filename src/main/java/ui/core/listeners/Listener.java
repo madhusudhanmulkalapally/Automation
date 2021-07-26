@@ -26,7 +26,7 @@ public class Listener implements IInvokedMethodListener {
     public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
         if(method.isConfigurationMethod()) {
             //String browserName = System.getProperty("mode");
-            String browserName = "sauce";
+            String browserName = "chrome";
             if(browserName==null) {
                 browserName = "local-zelenium";
             }
