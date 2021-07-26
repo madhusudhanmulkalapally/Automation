@@ -12,7 +12,7 @@ public class LoginTest extends AbstractTest {
 
     LoginPageActions login;
 
-    @Test(enabled = true, description="testdescriptipn")
+    @Test(enabled = true, description="loginTest")
     public void loginTest() {
         login = new LoginPageActions(Driver.getDriver());
         System.out.print("test passed");
