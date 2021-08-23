@@ -1,8 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite thread-count="1" verbose="1" name="Gmail Suite" annotations="JDK" parallel="tests">
+<suite thread-count="2" verbose="1" name="Gmail Suite" parallel="methods">
 
-    <test name="flipkart">
+    <test name="demo" parallel="methods" enabled="true">
         <classes>
             <class name="ui.logintest.LoginTest"/>
         </classes>

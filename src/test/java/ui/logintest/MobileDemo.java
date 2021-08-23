@@ -8,16 +8,15 @@ import ui.core.listeners.Listener;
 import ui.core.pageactions.LoginPageActions;
 
 @Listeners({Listener.class})
-public class LoginTest extends AbstractTest {
+public class MobileDemo extends AbstractTest {
 
     LoginPageActions login;
 
-    @Test(enabled = true, description="loginTest")
-    public void loginTest() {
+    @Test(enabled = true, description="loginTestDemo")
+    public void loginTestdemo() {
         login = new LoginPageActions(Driver.getDriver());
+        login.clickOnGmail();
         System.out.print("test passed");
-        //login.clickOnGmail();
 
     }
-
 }
