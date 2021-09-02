@@ -19,4 +19,7 @@ public class LoginPage extends Driver {
 
     @FindBy(xpath = "//*[@id='input']")
     protected WebElement inputText;
+
+    @FindBy(xpath = "//a[text()='Pay']")
+    protected  WebElement payButton;
 }

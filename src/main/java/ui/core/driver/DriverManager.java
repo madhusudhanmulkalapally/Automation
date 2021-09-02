@@ -1,16 +1,21 @@
 package ui.core.driver;
 
+import com.saucelabs.saucerest.SauceREST;
+import com.saucelabs.saucerest.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.SessionId;
 import utils.ConfigProperties;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DriverManager {
+    static SauceREST sauceREST;
+    static String sessionID;
    // public static final String USERNAME = "oauth-madhus.te7-aeaf9";
     public static final String USERNAME = "oauth-pavanimulkalapally-83b21";
     //public static final String ACCESS_KEY = "44a7e556-4493-4bbb-845b-c3b3391c3637";
@@ -45,11 +50,13 @@ public class DriverManager {
                 DesiredCapabilities caps = DesiredCapabilities.chrome();
                 caps.setCapability("platform", "Windows 10");
                 caps.setCapability("version", "latest");
-                caps.setCapability("name", "Test1");
+                caps.setCapability("name", methodName);
                 caps.setCapability("extendedDebugging", "true");
                 //caps.setCapability("tunnelIdentifier", "oauth-pavanimulkalapally-83b21_tunnel_id");
 
                 driver = new RemoteWebDriver(new URL(URL), caps);
+                sessionID = ((RemoteWebDriver) driver).getSessionId().toString();
+                System.out.println("Session Id is: " + sessionID);
             }
 
             if(System.getProperty("browser").equalsIgnoreCase("devicelab")) {
@@ -73,8 +80,10 @@ public class DriverManager {
                 caps.setCapability("platformName","Android");
                 driver = new RemoteWebDriver(new URL(URL), caps);
             }
-            driver.navigate().to("https://www.google.com");
+           driver.navigate().to("https://qgo.carecredit.com/consumer/providersearch");
+            //driver.navigate().to("https://www.google.com");
             return driver;
         }
     }
+
 }

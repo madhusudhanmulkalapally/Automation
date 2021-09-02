@@ -16,8 +16,16 @@ public class LoginPageActions extends LoginPage {
     }
 
     public void clickOnGmail() {
-        smallExplitwait(gmailText);
+        PageFactory.initElements(Driver.getDriver(), this);
+        //smallExplitwait(gmailText);
         gmailText.click();
         System.out.println("clicked on the gmail");
+    }
+
+    public boolean verifyPayButton() {
+        //PageFactory.initElements(Driver.getDriver(), this);
+        smallExplitwait(payButton);
+        return payButton.isDisplayed();
+
     }
 }
