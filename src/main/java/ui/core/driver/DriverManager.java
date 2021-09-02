@@ -1,7 +1,5 @@
 package ui.core.driver;
 
-import com.saucelabs.saucerest.SauceREST;
-import com.saucelabs.saucerest.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,7 +12,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class DriverManager {
-    static SauceREST sauceREST;
     static String sessionID;
    // public static final String USERNAME = "oauth-madhus.te7-aeaf9";
     public static final String USERNAME = "oauth-pavanimulkalapally-83b21";
