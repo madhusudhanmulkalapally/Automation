@@ -13,5 +13,6 @@ public class LoginPageActions extends LoginPage {
     public void login(String userName, String passWord) {
         PageFactory.initElements(Driver.getDriver(), this);
         userNameField.sendKeys("fsd");
+        System.out.println("test demo");
     }
 }
