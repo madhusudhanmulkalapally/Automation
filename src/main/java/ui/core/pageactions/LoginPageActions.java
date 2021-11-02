@@ -23,7 +23,7 @@ public class LoginPageActions extends LoginPage {
     }
 
     public boolean verifyPayButton() {
-        //PageFactory.initElements(Driver.getDriver(), this);
+        PageFactory.initElements(Driver.getDriver(), this);
         smallExplitwait(payButton);
         return payButton.isDisplayed();
 

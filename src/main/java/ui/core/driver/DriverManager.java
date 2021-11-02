@@ -1,5 +1,6 @@
 package ui.core.driver;
 
+import com.saucelabs.saucerest.SauceREST;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,6 +14,7 @@ import java.net.URL;
 
 public class DriverManager {
     static String sessionID;
+    static SauceREST sauceClient;
    // public static final String USERNAME = "oauth-madhus.te7-aeaf9";
     public static final String USERNAME = "oauth-pavanimulkalapally-83b21";
     //public static final String ACCESS_KEY = "44a7e556-4493-4bbb-845b-c3b3391c3637";
@@ -54,6 +56,7 @@ public class DriverManager {
                 driver = new RemoteWebDriver(new URL(URL), caps);
                 sessionID = ((RemoteWebDriver) driver).getSessionId().toString();
                 System.out.println("Session Id is: " + sessionID);
+                sauceClient= new SauceREST(USERNAME, ACCESS_KEY);
             }
 
             if(System.getProperty("browser").equalsIgnoreCase("devicelab")) {

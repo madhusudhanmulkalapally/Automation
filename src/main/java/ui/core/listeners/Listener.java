@@ -5,11 +5,13 @@ import io.qameta.allure.Attachment;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.util.IOUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import ui.core.driver.Driver;
 import ui.core.driver.DriverManager;
 
@@ -57,7 +59,7 @@ public class Listener implements IInvokedMethodListener {
                 }
 
                 System.out.println("closing webdriver session: "+Thread.currentThread().getId());
-                driver.quit();
+                //driver.quit();
             }
         }
     }
@@ -75,6 +77,17 @@ public class Listener implements IInvokedMethodListener {
             saveScreenShot(screen);
 
         }
+    }
+
+    @AfterMethod
+    public void tearDown(ITestResult result) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
+        Driver.getDriver().quit();
+
+    }
+
+    protected void annotate(String text) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("sauce:context=" + text);
     }
 
     @Attachment(value="screen shot of the failure", type = "image/png")
