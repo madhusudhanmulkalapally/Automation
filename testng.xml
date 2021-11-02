@@ -5,6 +5,7 @@
     <test name="demo">
         <classes>
             <class name="ui.logintest.TestNgAnnotationsDemo"/>
+            <class name="ui.logintest.LoginTest"/>
         </classes>
     </test>
 </suite>
