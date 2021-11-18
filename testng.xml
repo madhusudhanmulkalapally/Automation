@@ -4,8 +4,9 @@
 
     <test name="demo">
         <classes>
-            <class name="ui.logintest.TestNgAnnotationsDemo"/>
-            <class name="ui.logintest.LoginTest"/>
+<!--            <class name="ui.logintest.TestNgAnnotationsDemo"/>-->
+<!--            <class name="ui.logintest.LoginTest"/>-->
+            <class name="ui.logintest.Readjenkincredentials"></class>
         </classes>
     </test>
 </suite>
