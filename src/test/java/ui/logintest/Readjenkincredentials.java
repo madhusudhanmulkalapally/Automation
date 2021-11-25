@@ -6,7 +6,7 @@ public class Readjenkincredentials {
 
 @Test
 public void check() {
-    String text = System.getProperty("read");
+    String text = System.getenv("read");
     System.out.println("secretlength: " + text.length());
     System.out.println("secret name: " + text);
 }
